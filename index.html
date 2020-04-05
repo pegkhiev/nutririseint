@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriRise Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.7/d3.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<body>
+    <div class="container">
+        <div class="row">
+          <div class="col-md-12 jumbotron text-center">
+            <h1>NutriRise Research Dashboard</h1>
+          </div>
+        </div>
+    <div class="row">
+        <div class="col-md-4">
+            <!-- <div class="well"> -->
+            <ul class = 'bg-light list-group'>
+                <li class = 'bg-light, list-group-item'>
+                    <label for = 'month'>Month</label>
+                    <select id="selMonth" onchange="monthChanged(this.value)">
+                        <option></option>
+                        <option value = "march">March</option>
+                        <option value = "april">April</option>
+                    </select>
+                </li>
+            </ul>
+        </div> 
+        <div class="col-md-4">
+            <!-- <div class="well"> -->
+            <ul class = 'bg-light list-group'>
+                <li class = 'bg-light, list-group-item'>
+                    <label for = 'name'>Researcher</label>
+                    <select id="selName" onchange="nameChanged(this.value)">
+                        <option></option>
+                        <option value = "amber">Amber</option>
+                        <option value = "gwen">Gwen</option>
+                        <option value = "pitia">Pitia</option>
+                    </select>   
+                </li>
+            </ul>
+        </div> 
+        <div class="col-md-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Total Hours Worked</h3>
+                    </div>
+                        <div id="month_hours" class="panel-body"></div>
+                    
+                </div>
+        </div>
+    </div>
+                <!-- <li class = 'bg-light, list-group-item'>
+                    <label for = 'week'>Week</label>
+                    <!-- <select id = "selWeek"> -->
+                    <!-- <select id="selWeek" onchange="weekChanged(this.value)">
+                        <option></option>
+                        <option value = wk1>Week 1</option>
+                        <option value = wk2>Week 2</option>
+                        <option value = wk3>Week 3</option>
+                        <option value = wk4>Week 4</option>
+                    </select>   
+                </li>
+                <li class = 'bg-light, list-group-item'>
+                    <label for = 'project'>Project</label>
+                    <!-- <select id = 'selProd'>  -->
+                    <!-- <select id="selProd" onchange="prodChanged(this.value)">
+                        <option></option>
+                    </select>   
+                </li> --> 
+    <div class="row">   
+        <div class ="col-md-6">
+            <div id = "month_pie"></div>
+        </div>
+        <div class ="col-md-6">
+            <div id = "month_bywk_pie"></div>
+        </div>          
+    </div>
+    <div class = "row">
+        <div class="col-md-6">
+            <div id = "proj1_pie"></div>
+        </div>
+        <div class="col-md-6">
+            <div id = "proj2_pie"></div>
+        </div>
+    </div>
+    <div class = "row">
+        <div class="col-md-6">
+            <div id = "proj3_pie"></div>
+        </div>
+        <div class="col-md-6">
+            <div id = "proj4_pie"></div>
+        </div>
+    </div>
+    <div class = "row">
+        <div class="col-md-6">
+            <div id = "proj5_pie"></div>
+        </div>
+    </div>
+    <div class = "row"></div>
+        <div class="col-md-3">
+            <ul class = 'bg-light list-group'>
+                <li class = 'bg-light, list-group-item'>
+                    <label for = 'week'>Week</label>
+                    <select id="selWeek" onchange="weekChanged(this.value)">
+                        <option></option>
+                        <option value = "wk1">Week 1</option>
+                        <option value = "wk2">Week 2</option>
+                        <option value = "wk3">Week 3</option>
+                        <option value = "wk4">Week 4</option>
+                    </select>   
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <div id = "weekly_pie"></div>
+        </div>
+        
+    </div>
+    </div>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script> -->
+    <!-- <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> -->
+    <script src="plots.js"></script>
+</body>
+</html>
